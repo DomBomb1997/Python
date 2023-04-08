@@ -85,6 +85,11 @@ def again(nice,mean,name):
             reset(nice,mean,name)
         if choice == "n":
             print("\nOh. so sad, sorry to see you go!")
+            stop = False
+            quit()
+        else:
+            print("\nEnter ( Y ) for 'YES', ( N ) for 'NO':\n>>> ")
+
 
 
 def reset(nice,mean,name):
@@ -95,5 +100,5 @@ def reset(nice,mean,name):
 
 
 
-if __name__ == "__main_":
+if __name__ == "__main__":
     start()
