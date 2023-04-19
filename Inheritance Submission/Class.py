@@ -4,7 +4,7 @@ class User:
     password = 'Steam123'
     steam_account_ = 0
 
-class Employee(User)
+class Employee(User):
     base_pay = 15.00
     department = 'Web Design'
 
