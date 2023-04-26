@@ -33,7 +33,7 @@ class Employee(User):
             print("The pin or email is incorrect.")
 
 #My own class
-class Person(person):
+class Person(User):
     name = "Jake"
     Phone = "1234567890"
     cc = "0987654321"
