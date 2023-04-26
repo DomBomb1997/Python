@@ -32,6 +32,23 @@ class Employee(User):
         else:
             print("The pin or email is incorrect.")
 
+#My own class
+class Person(person):
+    name = "Jake"
+    Phone = "1234567890"
+    cc = "0987654321"
+
+
+#This is the same method in the parent class "User".
+    def getLoginInfo(self):
+        entry_name = input("Enter your name: ")
+        entry_phone = input("Enter your phone number: ")
+        entry_cc = input("Enter your cc number: ")
+        if (entry_name == self.name and entry_phone == self.phone):
+            print("Welcome back, {}!".format(entry_name))
+        else:
+            print("Phone or cc is incorrect.")
+
 #The following code invokes the methods inside each class for the user and employee.
 
 customer = User()
@@ -40,11 +57,9 @@ customer.getLoginInfo()
 manger = Employee()
 manger.getLoginInfo()
 
+person = Person()
+person.getLoginInfo()
 
 
 
 
-
-
-
-if __name__="__main__"
