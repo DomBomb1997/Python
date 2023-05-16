@@ -1,4 +1,4 @@
-
+#Protected Var
 class Protected:
     def __init__(self):
         self._protectedVar = 0

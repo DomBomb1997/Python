@@ -1,3 +1,4 @@
+#Private Var
 class Protected:
     def __init__(self):
         self.__privateVar = 23
