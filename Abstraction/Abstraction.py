@@ -7,7 +7,8 @@ class car(ABC):
         @abstractmethod
         def payment(self, amount):
             pass
-class DebitCardPayment(Car):
+        
+class DebitCardPayment(car):
 #there we've defined how to implement the patyment function from its parent payslip class.
     def payment(self, amount):
         print("Your purchase amount of () exceeded your $100 limit".format(amount))
