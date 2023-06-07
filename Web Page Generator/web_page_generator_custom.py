@@ -14,11 +14,23 @@ class ParentWindow(Frame):
         ttk.Button(win, text= "Submit Custom Text", command= get_data).place(relx= .7, rely= .5, anchor= CENTER)
         #Create an instance of Tkinter Frame
         win = Tk()
+        #Create an Entry Widget
+        entry = Entry(win, width= 42)
+        entry.place(relx= .5, rely= .5, anchor= CENTER)
+
+        # Define a function to return the Input data
+    def get_data():
+       label.config(text= entry.get(), font= ('Helvetica 13'))
+
+        #Inititalize a Label widget
+        label= Label(win, text="", font=('Helvetica 13'))
+        label.pack()
+
 
     def defaultHTML(self):
         htmlText = "Stay tuned for our amazing summer sale!"
         htmlFile = open("index.html", "w")
-        htmlContent = "<html>\n<body>\n<h1>" +  label.config(text= entry.get(), font= ('Helvetica 13')), w == Entry( master, option, ... ) + "</h1>\n</body>\n</html>"
+        htmlContent = "<html>\n<body>\n<h1>" + command= get_data + "</h1>\n</body>\n</html>"
         htmlFile.write(htmlContent)
         htmlFile.close()
         webbrowser.open_new_tab("index.html")
