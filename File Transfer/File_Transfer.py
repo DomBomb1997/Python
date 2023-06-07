@@ -56,7 +56,7 @@ class ParentWindow(Frame):
         #The .insert method will insert the user selection to the source_dir entry
         self.source_dir.insert(0, selectSourceDir)
         #Creates button to select files from source directory
-        self.sourceDir_btn = Button(Text="Select Source", width=20, command=self.sourceDir)
+        self.sourceDir_btn = Button(text="Select Source", width=20, command=self.sourceDir)
 
     #Creates function to select desitnation directory.
     def destDir(self):
@@ -67,7 +67,7 @@ class ParentWindow(Frame):
         #The .insert method will insert the user selection to the source_dir entry
         self.destination_dir.insert(0, selectDestDir)
         #Creates button to select files from destination directory
-        self.destDir_btn = Button(Text="Select Destination", width=20, command=self.destDir)
+        self.destDir_btn = Button(text="Select Destination", width=20, command=self.destDir)
 
     #Creates function to transfer files from one directory to another
     def transferFiles(self):
@@ -84,19 +84,18 @@ class ParentWindow(Frame):
         source_files = os.listdir(source)
         #Runs through each file in the source directory
         for i in source_files:
-            #moves each file from the source to the destination
-            shutil.move(source + '/' + i, destination)
             #Get the time and date from 
-            my_date + date(2023, 6, 5)
+            my_date = ini_time_for_now
             #Gets time of last file modified
             modification_time = os.path.getmtime(path)
             #Gets today's date
-            Todays_time = time.time()
+            Todays_time = time.time(datetime.today( )- datetime.timedelta(days=1))
             # Calling the fromtimestamp() function
             # to get date from the current time
             date_From_CurrentTime = datetime.date.fromtimestamp(Todays_time);
             ini_time_for_now = datetime.now()
-            
+            #moves each file from the source to the destination
+            shutil.move(source + '/' + i, os.path.join(source, i))
             print("Date for the Timestamp is: %s"%date_From_CurrentTime);
             print("Last modification time since the epoch:", access_time)
             print(os.path.join(path, "User/Desktop", "file.txt"))
