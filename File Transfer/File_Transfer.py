@@ -83,18 +83,20 @@ class ParentWindow(Frame):
         #Gets a list of files in the source directory
         source_files = os.listdir(source)
         #Runs through each file in the source directory
+        #Gets today's date
+        One_day_ago = datetime.now()-timedelta(hours=24)
+        print(One_day_ago)
         for i in source_files:
-            #Gets today's date
-            Todays_time = time.time(datetime.today()- datetime.timedelta(days=1))
             #builds the file path
             path = os.path.join(source, i)
             #gets modification time which comes back as a
             modification_time = os.path.getmtime(path)
             #converts the modification time to a date format we can work with
             fileDateTime = datetime.fromtimestamp(modification_time);
-            #moves each file from the source to the destination
-            shutil.move(source + '/' + i, destination)
-            print(i + ' was successfully transfered.')
+            if (fileDateTime > One_day_ago):
+                #moves each file from the source to the destination
+                shutil.move(source + '/' + i, destination)
+                print(i + ' was successfully transfered.')
             
 
     #Creates function to exit program
