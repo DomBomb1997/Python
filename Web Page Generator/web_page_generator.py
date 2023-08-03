@@ -25,8 +25,10 @@ class ParentWindow(Frame):
         self.Label = tk.Label(text = Custombody)
         self.Label.grid(row=0, column=0)
         #Entry for custom body
-        self.customentry = Entry(width=75) #ommand=self.custom.body)
+        self.customentry = Entry(width=75) #ommand=self.Custombody)
         self.customentry.grid(row=1, column=0, padx=(20, 10), pady=(15, 10))
+
+`
 
     def defaultHTML(self):
         htmlText = "Stay tuned for our amazing summer sale!"
@@ -36,6 +38,12 @@ class ParentWindow(Frame):
         htmlFile.close()
         webbrowser.open_new_tab("index.html")
 
+
+    def Custombody(self):
+        BodyText = get(self.customentry)
+        Insert(body,self.customentry)
+
+    
         
 if __name__== "__main__":
     root = tk.Tk()
