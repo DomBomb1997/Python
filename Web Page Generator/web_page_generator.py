@@ -12,7 +12,7 @@ class ParentWindow(Frame):
         self.btn.grid(row=2, column=2, padx=(20, 10), pady=(30,0))
 
         #Creates custom body button
-        self.Custombtn = Button(text="Custom Body", width=30, height=1, )
+        self.Custombtn = Button(text="Custom Body", width=30, height=1, command=self.Custombody )
         #Postions button on grid()
         self.Custombtn.grid(row=2, column=1, padx=(20, 10), pady=(30,0))
 
@@ -28,7 +28,8 @@ class ParentWindow(Frame):
         self.customentry = Entry(width=75) #ommand=self.Custombody)
         self.customentry.grid(row=1, column=0, padx=(20, 10), pady=(15, 10))
 
-`
+
+
 
     def defaultHTML(self):
         htmlText = "Stay tuned for our amazing summer sale!"
@@ -39,11 +40,17 @@ class ParentWindow(Frame):
         webbrowser.open_new_tab("index.html")
 
 
-    def Custombody(self):
-        BodyText = get(self.customentry)
-        Insert(body,self.customentry)
 
-    
+
+    def Custombody(self):
+        htmlText = self.customentry.get()
+        htmlFile = open("index.html", "w")
+        htmlContent = "<html>\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
+        htmlFile.write(htmlContent)
+        htmlFile.close()
+        webbrowser.open_new_tab("index.html")
+
+
         
 if __name__== "__main__":
     root = tk.Tk()
